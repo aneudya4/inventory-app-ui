@@ -1,0 +1,16 @@
+header {
+  background: #82c9c1;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+nav {
+  align-self: center;
+}
+header nav ul {
+  display: flex;
+}
+header nav ul li {
+  margin-right: 20px;
+}

@@ -1,0 +1,54 @@
+form {
+  text-align: center;
+  width: 420px;
+  padding: 10px 20px;
+  margin: auto auto;
+  transform: translateY(50%);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(190, 186, 186, 0.541);
+  background: whitesmoke;
+  border-radius: 5px;
+  height: 400px;
+}
+
+.login-form h3 {
+  margin-top: 20px;
+}
+form label:first-of-type {
+  margin-top: 30px;
+}
+
+label {
+  text-align: left;
+  display: block;
+  font-size: 17px;
+  width: 100%;
+  margin: 20px 0;
+  padding: 5px;
+}
+
+input {
+  margin-top: 5px;
+  width: 100%;
+  display: block;
+  border-top: 0;
+  border: none;
+  background: transparent;
+  border-bottom: 1px solid rgba(190, 186, 186, 0.541);
+}
+form button {
+  width: 100%;
+  font-size: 15px;
+  margin: auto auto 0 auto;
+  border: 0;
+  background: #82c9c1;
+  padding: 10px 0;
+  color: white;
+}
+
+form a {
+  display: inline-block;
+  color: #82c9c1;
+  margin-top: 15px;
+}
