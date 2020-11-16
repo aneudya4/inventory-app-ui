@@ -1,9 +1,12 @@
 header {
-  background: #82c9c1;
-  background: white;
+  background-color: #0b1b32;
   display: flex;
   justify-content: space-between;
   padding: 10px 0;
+}
+header h1 {
+  color: white;
+  padding-left: 20px;
 }
 nav {
   align-self: center;
@@ -13,4 +16,7 @@ header nav ul {
 }
 header nav ul li {
   margin-right: 20px;
+}
+header nav ul li a {
+  color: white;
 }

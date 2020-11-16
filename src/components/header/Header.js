@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import './header.css';
 const Header = (props) => {
@@ -8,8 +8,7 @@ const Header = (props) => {
       <nav>
         <ul>
           <li>
-            {' '}
-            <Link to='/auth/dashboard'>Dashboard</Link>
+            <Link to='/auth/dashboard/overview'>Dashboard</Link>
           </li>
           <li>
             <Link to='/accounts/register'>Register</Link>

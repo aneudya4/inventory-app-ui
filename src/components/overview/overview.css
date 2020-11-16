@@ -1,0 +1,53 @@
+.overview {
+  background: whitesmoke;
+  padding: 0 0 0 25px;
+  color: #2a35cf;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.overview h2 {
+  font-size: 40px;
+}
+.overview .inventory-details {
+  display: flex;
+  width: 90%;
+  justify-content: space-between;
+}
+.overview .details-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  width: 250px;
+  padding: 20px;
+  background: white;
+  margin: 10px 0;
+  position: relative;
+  border-radius: 10px;
+}
+.overview .details-card i:first-of-type {
+  width: 60px;
+  text-align: center;
+  position: absolute;
+  font-size: 25px;
+  right: 70%;
+  padding: 10px 15px;
+  border-radius: 5px;
+  color: white;
+  background: rgb(41, 41, 212);
+}
+
+.overview .details-card i.fa-box-open {
+  background: rgb(211, 72, 114);
+}
+.overview .details-card i.fa-boxes {
+  background: rgb(13, 124, 214);
+}
+.details-card span:first-of-type {
+  font-size: 25px;
+}
+.details-card span:last-of-type {
+  color: rgba(104, 101, 101, 0.555);
+}

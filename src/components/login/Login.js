@@ -26,7 +26,7 @@ const Login = (props) => {
           />
         </label>
 
-        <button>Login</button>
+        <button className='btn'>Login</button>
         <span>
           need an account ? <Link to='./register'>Register</Link>
         </span>

@@ -30,7 +30,7 @@ const Register = (props) => {
           />
         </label>
 
-        <button>Register</button>
+        <button className='btn'>Register</button>
         <span>
           already have an account ? <Link to='./login'>Log in</Link>
         </span>

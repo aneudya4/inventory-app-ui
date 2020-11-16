@@ -1,0 +1,45 @@
+.orders-list {
+  margin-top: 300px;
+}
+
+table.steelBlueCols {
+  background-color: #555555;
+  border: 10px solid #555555;
+  width: 45%;
+  text-align: center;
+  border-collapse: collapse;
+}
+
+table.steelBlueCols td,
+table.steelBlueCols th {
+  border: 1px solid #555555;
+  padding: 15px 10px;
+}
+table.steelBlueCols tbody td {
+  font-size: 12px;
+  font-weight: bold;
+  color: #ffffff;
+}
+table.steelBlueCols td:nth-child(even) {
+  background: #82c9c1;
+}
+table.steelBlueCols thead {
+  background: #82c9c1;
+}
+table.steelBlueCols thead th {
+  font-size: 15px;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: left;
+  border-left: 2px solid #398aa4;
+}
+table.steelBlueCols thead th:first-child {
+  border-left: none;
+}
+
+table.steelBlueCols tfoot td {
+  font-size: 13px;
+}
+table.steelBlueCols tfoot .links {
+  text-align: right;
+}

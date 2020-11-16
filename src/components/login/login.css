@@ -37,14 +37,9 @@ input {
   background: transparent;
   border-bottom: 1px solid rgba(190, 186, 186, 0.541);
 }
-form button {
+form .btn {
   width: 100%;
-  font-size: 15px;
   margin: auto auto 0 auto;
-  border: 0;
-  background: #82c9c1;
-  padding: 10px 0;
-  color: white;
 }
 
 form a {

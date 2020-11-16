@@ -6,6 +6,7 @@
 
 body {
   background: #0b1b32;
+  background: white;
 }
 ul {
   list-style-type: none;
@@ -15,4 +16,13 @@ a:active,
 a:visited {
   text-decoration: none;
   color: black;
+}
+
+.btn {
+  padding: 10px 0;
+  border: 0;
+  color: white;
+  font-size: 15px;
+  background: #82c9c1;
+  cursor: pointer;
 }

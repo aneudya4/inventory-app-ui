@@ -1,14 +1,18 @@
 import './App.css';
 import SignUpWrapper from './components/signUpWrapper/SignUpWrapper';
 import Header from './components/header/Header';
-import { Route, Switch } from 'react-router-dom';
+import Dashboard from './components/dashboard/Dashboard';
+import { Route } from 'react-router-dom';
 function App() {
   return (
     <div className='App'>
-      <Header />
-      <Switch>
-        <Route path='/accounts' component={SignUpWrapper} />
-      </Switch>
+      <Route
+        exact
+        path={['/', '/accounts/register', '/accounts/login']}
+        component={Header}
+      />
+      <Route path='/auth/dashboard' component={Dashboard} />
+      <Route path='/accounts' component={SignUpWrapper} />
     </div>
   );
 }
