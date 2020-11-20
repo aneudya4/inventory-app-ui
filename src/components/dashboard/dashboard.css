@@ -9,17 +9,18 @@
 }
 .nav p {
   margin: 10px 0;
-  padding: 0 15px;
+  padding: 0 10px;
 }
 
 .nav p span {
   padding: 5px;
   background: #82c9c1;
   font-size: 20px;
-  padding: 10px;
+  padding: 10px 2px;
 }
 aside {
   width: 100%;
+  max-height: 100vh;
 }
 
 aside nav ul li {

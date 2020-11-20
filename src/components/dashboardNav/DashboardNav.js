@@ -1,14 +1,29 @@
-import React from 'react';
-import { Link, NavLink, withRouter } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link, NavLink, withRouter, Redirect } from 'react-router-dom';
+import app from '../../firebaseConfig';
+import { AuthContext } from '../auth/Auth';
 
-const DashboardNav = ({ match }) => {
+const DashboardNav = ({ match, history }) => {
+  const { currentUser } = useContext(AuthContext);
+  const handleLogout = () => {
+    app
+      .auth()
+      .signOut()
+      .then(() => {
+        history.push('/');
+      });
+  };
+
+  if (!currentUser) {
+    return <Redirect to='/' />;
+  }
   return (
     <aside className='nav'>
       <h2>
         <Link to='/'>Logo</Link>
       </h2>
       <p>
-        Welcome <span>Jhon Doe</span>
+        Welcome <span>{currentUser.displayName}</span>
       </p>
 
       <nav>
@@ -52,7 +67,9 @@ const DashboardNav = ({ match }) => {
             </NavLink>
           </li>
           <li>
-            <button className='btn btn-auth'>Sign Out</button>
+            <button onClick={handleLogout} className='btn btn-auth'>
+              Sign Out
+            </button>
           </li>
         </ul>
       </nav>
