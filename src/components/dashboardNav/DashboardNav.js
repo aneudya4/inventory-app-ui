@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
 import { Link, NavLink, withRouter, Redirect } from 'react-router-dom';
 import app from '../../firebaseConfig';
-import { AuthContext } from '../auth/Auth';
+import apiContext from '../../apiContext';
 
 const DashboardNav = ({ match, history }) => {
-  const { currentUser } = useContext(AuthContext);
+  const { user } = useContext(apiContext);
   const handleLogout = () => {
     app
       .auth()
@@ -14,16 +14,16 @@ const DashboardNav = ({ match, history }) => {
       });
   };
 
-  if (!currentUser) {
-    return <Redirect to='/' />;
-  }
+  // if (!user) {
+  //   return <Redirect to='/accounts/login' />;
+  // }
   return (
     <aside className='nav'>
       <h2>
         <Link to='/'>Logo</Link>
       </h2>
       <p>
-        Welcome <span>{currentUser.displayName}</span>
+        Welcome <span>{user.displayName}</span>
       </p>
 
       <nav>

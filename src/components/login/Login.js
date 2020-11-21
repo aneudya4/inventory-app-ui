@@ -1,11 +1,13 @@
 import React, { useCallback, useContext } from 'react';
 import { Redirect } from 'react-router-dom';
 import app from '../../firebaseConfig';
-import { AuthContext } from '../auth/Auth';
+import apiContext from '../../apiContext';
 import { Link } from 'react-router-dom';
+import config from '../config';
 import './login.css';
 const Login = ({ history }) => {
-  const { currentUser } = useContext(AuthContext);
+  const { user, orders, setUser, isLoading } = useContext(apiContext);
+
   const handleLogin = useCallback(
     async (e) => {
       e.preventDefault();
@@ -23,7 +25,7 @@ const Login = ({ history }) => {
     [history]
   );
 
-  if (currentUser) {
+  if (user) {
     return <Redirect to='/auth/dashboard/overview' />;
   }
 

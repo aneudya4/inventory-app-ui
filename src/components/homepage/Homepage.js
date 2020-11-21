@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import app from '../../firebaseConfig';
-import { AuthContext } from '../auth/Auth';
+import apiCoptext from '../../apiContext';
 const HomePage = () => {
-  const data = useContext(AuthContext);
+  const { user } = useContext(apiCoptext);
 
   return (
     <div>

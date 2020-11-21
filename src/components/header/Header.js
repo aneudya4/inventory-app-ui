@@ -1,13 +1,13 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import './header.css';
-import { AuthContext } from '../auth/Auth';
+import apiContext from '../../apiContext';
 import app from '../../firebaseConfig';
 
 const Header = (props) => {
-  const { currentUser } = useContext(AuthContext);
+  const { user } = useContext(apiContext);
   const renderAuthNav = () => {
-    if (!currentUser) {
+    if (!user) {
       return (
         <>
           <li>

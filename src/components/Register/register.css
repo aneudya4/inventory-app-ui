@@ -1,3 +1,10 @@
 .validation-errors {
   color: tomato;
 }
+label span {
+  color: tomato;
+}
+
+input {
+  outline: none;
+}
