@@ -1,23 +1,23 @@
-import React, { useEffect, useContext, useState } from 'react';
+import React from 'react';
+import numeral from 'numeral';
 import OrdersList from '../OrdersList/OrdersList';
-import config from '../config';
-import apiContext from '../../apiContext';
-import Dashboard from '../dashboard/Dashboard';
 import './overview.css';
 const Overview = ({ products, orders }) => {
-  console.log(orders);
   const totalSales = orders.reduce(function (a, b) {
-    console.log(a, 'mmg');
     return parseFloat(a) + parseInt(b.order_total);
   }, 0);
-  console.log(totalSales, 'HJERE');
+
+  const stockTotal = products.reduce(function (a, b) {
+    return parseFloat(a) + parseInt(b.stock_total);
+  }, 0);
+
   return (
     <div className='overview'>
       <h2>Overview</h2>
       <div className='inventory-details'>
         <div className='details-card'>
           <i className='fas fa-dollar-sign'></i>
-          <span>{`$${totalSales}`}</span>
+          <span>{numeral(totalSales).format('($0,0)')}</span>
           <span>Total Sales</span>
         </div>
         <div className='details-card'>
@@ -27,7 +27,7 @@ const Overview = ({ products, orders }) => {
         </div>
         <div className='details-card'>
           <i className='fas fa-boxes'></i>
-          <span>{products.length}</span>
+          <span>{stockTotal}</span>
           <span>Products in stock</span>
         </div>
       </div>

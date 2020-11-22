@@ -5,10 +5,19 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .overview h2 {
   font-size: 40px;
+  color: black;
+}
+.overview h3 {
+  position: absolute;
+  top: 10px;
+  left: 80%;
+  color: white;
+  background: #82c9c1;
 }
 .overview .inventory-details {
   display: flex;

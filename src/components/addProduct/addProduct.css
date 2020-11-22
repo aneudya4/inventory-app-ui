@@ -1,0 +1,7 @@
+.add-product form {
+  transform: translate(0%, 10%);
+  width: 500px;
+  height: auto;
+  margin: 0 auto;
+  border: 0;
+}

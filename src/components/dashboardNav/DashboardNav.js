@@ -38,16 +38,7 @@ const DashboardNav = ({ match, history }) => {
               Products
             </NavLink>
           </li>
-          <li>
-            <NavLink activeClassName='selected' to={`${match.path}/orders`}>
-              New order
-            </NavLink>
-          </li>
-          <li>
-            <NavLink activeClassName='selected' to={`${match.path}/customers`}>
-              Customers
-            </NavLink>
-          </li>
+
           <li>
             <NavLink activeClassName='selected' to={`${match.path}/order`}>
               Place order
