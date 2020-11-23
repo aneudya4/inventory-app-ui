@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import config from '../config';
 import { Link } from 'react-router-dom';
+import numeral from 'numeral';
+
 const Product = ({ product, updateProducts, history, addToCart }) => {
   const [input, setInput] = useState(1);
   const [error, setError] = useState(false);
@@ -39,20 +41,17 @@ const Product = ({ product, updateProducts, history, addToCart }) => {
   };
 
   return (
-    <>
-      {product.product_name}
-      {product.unit_price}
-      {product.description}
-      {product.stock_total}
-      <Link className='btn' to={`/auth/dashboard/edit-product/${product.id}`}>
-        Edit
-      </Link>
-      <button
-        onClick={() => onClickEdit(product.user_id, product.id)}
-        className='btn'
-      >
-        Delete
-      </button>
+    <li>
+      <span>
+        Product Name: <strong>{product.product_name}</strong>
+      </span>
+      <span>
+        Product Price:
+        <strong>{numeral(product.unit_price).format('($0,0)')}</strong>
+      </span>
+      <span>
+        Description:<strong>{product.description}</strong>
+      </span>
       <label>
         order quantity
         <input
@@ -68,10 +67,19 @@ const Product = ({ product, updateProducts, history, addToCart }) => {
           </span>
         )}
       </label>
+      <Link className='btn' to={`/auth/dashboard/edit-product/${product.id}`}>
+        Edit
+      </Link>
+      <button
+        onClick={() => onClickEdit(product.user_id, product.id)}
+        className='btn'
+      >
+        Delete
+      </button>
       <button onClick={() => onClickAdd(product)} className='btn'>
         Add to order
       </button>
-    </>
+    </li>
   );
 };
 

@@ -1,0 +1,46 @@
+.past-order-container {
+  width: 100%;
+  max-width: 1200px;
+  text-align: center;
+}
+
+.past-order-container h3 {
+  font-size: 40px;
+}
+
+.order-headers {
+  font-size: 25px;
+}
+.order-details {
+  text-transform: capitalize;
+}
+
+.order-details div:nth-child(even) {
+  background: rgb(187, 184, 184);
+}
+.orders {
+  margin-top: 10px;
+}
+
+.order-headers,
+.orders {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.order-headers span,
+.orders span {
+  width: 200px;
+  padding: 5px;
+}
+
+.past-orders span:first-of-type {
+  text-transform: capitalize;
+}
+
+@media all and (min-width: 925px) {
+  .order-headers span,
+  .past-orders span {
+    width: 180px;
+  }
+}

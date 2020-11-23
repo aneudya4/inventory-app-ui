@@ -1,0 +1,23 @@
+.place-order {
+  width: 100%;
+}
+.place-order form {
+  border: none;
+}
+
+.place-order .order-headers,
+.place-order .orders {
+  justify-content: space-between;
+}
+
+.place-order .order-headers span:nth-child(3) {
+  color: red;
+  margin-right: 30px;
+}
+
+.place-order .order-headers span {
+  width: 180px;
+}
+.orders span {
+  width: 180px;
+}

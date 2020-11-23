@@ -1,15 +1,27 @@
 .dashboard {
   display: flex;
-  height: 100vh;
+  flex-direction: column;
+  position: relative;
+  /* overflow: auto; */
+  /* height: 100vh; */
 }
+
 .nav {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
   color: white;
   background-color: #0b1b32;
-  width: 400px;
+  width: 100%;
+  min-width: 400px;
+  height: 100%;
 }
+
 .nav p {
   margin: 10px 0;
   padding: 0 10px;
+  align-self: center;
 }
 
 .nav p span {
@@ -20,16 +32,16 @@
   padding: 2px 5px;
   text-transform: capitalize;
 }
-aside {
-  width: 100%;
-  max-height: 100vh;
-}
 
-aside nav ul li {
+.nav nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.nav nav ul li {
   margin: 30px 0;
   width: 100%;
   font-size: 20px;
-  display: flex;
 }
 .nav a {
   color: white;
@@ -38,15 +50,49 @@ aside nav ul li {
   width: 100%;
 }
 .nav button {
+  text-align: center;
   width: 150px;
   padding: 15px;
   background: none;
   background: coral;
   margin: 0 auto;
+  outline: none;
 }
 
 .nav a.selected {
   background: #82c9c1;
   width: 100%;
   color: white;
+}
+
+@media all and (min-width: 925px) {
+  .dashboard {
+    flex-direction: row;
+  }
+
+  .dashboard::before {
+    content: '';
+    display: block;
+    width: 100%;
+    min-width: 400px;
+    height: 100vh;
+    max-width: 400px;
+  }
+  .nav {
+    position: fixed;
+    flex-direction: row;
+    height: 100%;
+    max-width: 400px;
+  }
+
+  .nav nav ul {
+    text-align: left;
+  }
+
+  .nav ul li {
+    width: 100;
+  }
+  .nav ul li:last-of-type {
+    text-align: center;
+  }
 }

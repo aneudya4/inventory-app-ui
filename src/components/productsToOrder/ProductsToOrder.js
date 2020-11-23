@@ -1,15 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
+import './productsToOrder.css';
 const ProductsToOrder = ({ product, quantity }) => {
-  //   const quantity = cart.filter((p) => p.id === product.id);
-  //   console.log(quantity, cart, product.id);
-  //   console.log(cart);
   return (
-    <>
-      {product.product_name}
-      {product.unit_price}
-      {product.description}
-      {quantity}
-    </>
+    <div className='orders'>
+      <span>{product.product_name}</span>
+      <span>{product.unit_price}</span>
+      <span>{quantity}</span>
+      <span>{product.description}</span>
+    </div>
   );
 };
 

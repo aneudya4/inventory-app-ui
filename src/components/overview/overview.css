@@ -3,9 +3,11 @@
   padding: 0 0 0 25px;
   color: #2a35cf;
   width: 100%;
+  max-width: 1200px;
   display: flex;
   flex-direction: column;
   position: relative;
+  text-align: center;
 }
 
 .overview h2 {
@@ -21,8 +23,10 @@
 }
 .overview .inventory-details {
   display: flex;
-  width: 90%;
-  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 .overview .details-card {
   display: flex;
@@ -59,4 +63,10 @@
 }
 .details-card span:last-of-type {
   color: rgba(104, 101, 101, 0.555);
+}
+
+@media all and (min-width: 825px) {
+  .overview .inventory-details {
+    flex-direction: row;
+  }
 }

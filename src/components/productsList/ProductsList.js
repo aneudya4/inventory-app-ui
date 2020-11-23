@@ -1,7 +1,6 @@
 import React from 'react';
 import Product from '../product/Product';
-import { Link } from 'react-router-dom';
-import config from '../config';
+import './productList.css';
 
 const ProductsList = ({ products, updateProducts, addToCart }) => {
   return (
@@ -9,13 +8,12 @@ const ProductsList = ({ products, updateProducts, addToCart }) => {
       <ul>
         {products.map((product) => {
           return (
-            <li key={product.id}>
-              <Product
-                product={product}
-                updateProducts={updateProducts}
-                addToCart={addToCart}
-              />
-            </li>
+            <Product
+              key={product.id}
+              product={product}
+              updateProducts={updateProducts}
+              addToCart={addToCart}
+            />
           );
         })}
       </ul>

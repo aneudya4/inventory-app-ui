@@ -43,8 +43,8 @@ const AddProduct = ({ userId, history, addNewProduct }) => {
 
   return (
     <div className='add-product'>
+      <h3> Add New Product</h3>
       <form onSubmit={handleSubmit}>
-        <h3> Add New Product</h3>
         <ProductForms />
       </form>
     </div>

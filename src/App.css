@@ -8,8 +8,7 @@
 }
 
 body {
-  background: #0b1b32;
-  background: white;
+  background: whitesmoke;
 }
 ul {
   list-style-type: none;
@@ -28,30 +27,4 @@ a:visited {
   font-size: 15px;
   background: #82c9c1;
   cursor: pointer;
-}
-
-.product-list {
-  width: 100%;
-}
-.product-list ul li {
-  margin: 10px 0;
-}
-
-.product-list ul li a {
-  display: inline-block;
-  padding: 10px 15px;
-  margin: 0 10px;
-}
-
-.product-list ul li button {
-  background-color: tomato;
-  padding: 10px 15px;
-  margin: 0 10px;
-}
-
-.place-order form {
-  transform: translate(0, 0);
-  text-align: left;
-  width: 70vw;
-  height: 100%;
 }

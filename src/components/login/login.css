@@ -1,9 +1,15 @@
+.form {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 form {
   text-align: center;
-  width: 420px;
+  width: 90%;
   padding: 10px 20px;
-  margin: auto auto;
-  transform: translateY(50%);
   display: flex;
   flex-direction: column;
   border: 1px solid rgba(190, 186, 186, 0.541);
@@ -42,8 +48,22 @@ form .btn {
   margin: auto auto 0 auto;
 }
 
-form a {
+form a,
+form a:visited,
+form a:active {
   display: inline-block;
   color: #82c9c1;
   margin-top: 15px;
+}
+
+@media all and (min-width: 825px) {
+  .form {
+    height: 100%;
+  }
+
+  .form form {
+    max-width: 520px;
+    margin: auto auto;
+    transform: translateY(50%);
+  }
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import ProductsToOrder from '../productsToOrder/ProductsToOrder';
+import './placeOrder.css';
 import config from '../config';
 const PlaceOrder = ({ products, cart, userId, addNewOrder, history }) => {
   const productDetails = cart.map((c) => products.find((p) => p.id === c.id));
@@ -53,17 +54,23 @@ const PlaceOrder = ({ products, cart, userId, addNewOrder, history }) => {
             required
           />
         </label>
-        <ul>
+        <div className='order-headers'>
+          <span>Product</span>
+          <span>Price</span>
+          <span>Quantity</span>
+          <span>Total</span>
+        </div>
+        <div className='order-details new-order'>
           {productDetails.map((p, i) => (
-            <li key={p.id}>
-              <ProductsToOrder
-                product={p}
-                cart={cart}
-                quantity={cart[i].quantity}
-              />
-            </li>
+            <ProductsToOrder
+              key={p.id}
+              product={p}
+              cart={cart}
+              quantity={cart[i].quantity}
+            />
           ))}
-        </ul>
+        </div>
+
         <button className='btn'>Submit</button>
       </form>
     </div>
