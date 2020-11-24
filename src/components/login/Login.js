@@ -1,12 +1,12 @@
-import React, { useCallback, useContext } from 'react';
+import React, { useCallback, useContext, useState } from 'react';
 import { Redirect } from 'react-router-dom';
 import app from '../../firebaseConfig';
 import apiContext from '../../apiContext';
 import { Link } from 'react-router-dom';
-import config from '../config';
 import './login.css';
 const Login = ({ history }) => {
-  const { user, orders, setUser, isLoading } = useContext(apiContext);
+  const { user } = useContext(apiContext);
+  const [loginError, setLoginError] = useState(false);
 
   const handleLogin = useCallback(
     async (e) => {
@@ -19,7 +19,7 @@ const Login = ({ history }) => {
 
         history.push('/auth/dashboard/overview');
       } catch (error) {
-        alert('err');
+        setLoginError(true);
       }
     },
     [history]
@@ -32,6 +32,9 @@ const Login = ({ history }) => {
   return (
     <div className='login-form form'>
       <form onSubmit={handleLogin}>
+        {loginError && (
+          <span className='validation-errors'>User Account Does Not Exist</span>
+        )}
         <h3>Log In</h3>
         <label htmlFor='email'>
           Your Email*

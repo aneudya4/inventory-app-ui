@@ -1,6 +1,4 @@
 import React, { useEffect, useContext, useState } from 'react';
-import config from '../config';
-import apiContext from '../../apiContext';
 import { Route, Redirect } from 'react-router-dom';
 import Overview from '../overview/Overview';
 import DashboardOptions from '../dashboardOptions/DashboardOptions';
@@ -10,6 +8,11 @@ import PastOrdersList from '../pastOrdersList/PastOrdersList';
 import AddProduct from '../addProduct/AddProduct';
 import EditProduct from '../editProduct/EditProduct';
 import PlaceOrder from '../place-order/PlaceOrder';
+import Notification from '../notification/Notification';
+
+import apiContext from '../../apiContext';
+import config from '../config';
+
 import './dashboard.css';
 
 const Dashboard = (props) => {
@@ -19,6 +22,7 @@ const Dashboard = (props) => {
   const [cart, setCart] = useState([]);
   const [errors, setErrors] = useState(false);
   const { user, setUser } = useContext(apiContext);
+  const [showNotification, setShowNotification] = useState(false);
 
   const addNewOrder = (order) => {
     const newOrder = [...orders, order];
@@ -26,10 +30,29 @@ const Dashboard = (props) => {
     setCart([]);
   };
   const handleAddToCart = (product) => {
+    const productInCart = cart.find((p) => p.id === product.id);
     const filteredCart = cart.filter((p) => p.id !== product.id);
-    filteredCart.push(product);
-    setCart(filteredCart);
+    setShowNotification(true);
+    if (productInCart) {
+      productInCart.quantity = productInCart.quantity + product.quantity;
+      filteredCart.push(productInCart);
+      setCart(filteredCart);
+    } else {
+      filteredCart.push(product);
+      setCart(filteredCart);
+    }
+    setTimeout(() => {
+      setShowNotification(false);
+    }, 1000);
   };
+
+  const deleteCartProduct = (id) => {
+    console.log('mmg', id);
+    const updatedCart = cart.filter((p) => p.id !== id);
+    console.log(updatedCart);
+    setCart(updatedCart);
+  };
+
   const addNewProduct = (product) => {
     const newProducts = [...products, product];
     setProducts(newProducts);
@@ -118,6 +141,7 @@ const Dashboard = (props) => {
   }
   return (
     <div className='dashboard'>
+      {showNotification && <Notification message='added' />}
       <Route path={`${props.match.path}`} component={DashboardOptions} />
       <Route
         path={`${props.match.path}/overview`}
@@ -179,6 +203,7 @@ const Dashboard = (props) => {
             products={products}
             cart={cart}
             addNewOrder={addNewOrder}
+            deleteCartProduct={deleteCartProduct}
             userId={userDbData.id}
           />
         )}

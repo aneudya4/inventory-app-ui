@@ -1,0 +1,17 @@
+.notification {
+  position: absolute;
+  top: 20px;
+  font-size: 20px;
+  left: 500px;
+  background: cadetblue;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  width: 200px;
+  text-transform: capitalize;
+}
+
+.notification i {
+  display: inline-block;
+  margin-left: 10px;
+}

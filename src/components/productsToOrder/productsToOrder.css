@@ -1,23 +1,55 @@
 .place-order {
+  max-width: 1200px;
   width: 100%;
 }
 .place-order form {
   border: none;
+  padding: 5px;
+  width: 100%;
+}
+
+.place-order form button {
+  margin-top: 0;
+}
+
+.place-order .validation-errors {
+  font-size: 25px;
 }
 
 .place-order .order-headers,
 .place-order .orders {
-  justify-content: space-between;
-}
-
-.place-order .order-headers span:nth-child(3) {
-  color: red;
-  margin-right: 30px;
+  justify-content: space-around;
 }
 
 .place-order .order-headers span {
   width: 180px;
 }
+
+.orders {
+  position: relative;
+}
 .orders span {
-  width: 180px;
+  /* width: 180px; */
+}
+
+.order-total {
+  border-top: 1px solid black;
+  font-size: 30px;
+  color: rgb(23, 138, 23);
+}
+.orders span.btn {
+  width: fit-content;
+  position: absolute;
+  background-color: tomato;
+  left: 90%;
+}
+.place-order .order-details span:nth-child(3) {
+  /* text-align: center; */
+  padding: 0 40px;
+}
+
+@media all and (min-width: 925px) {
+  .place-order .order-headers span:nth-child(3) {
+    margin-right: 30px;
+  }
 }

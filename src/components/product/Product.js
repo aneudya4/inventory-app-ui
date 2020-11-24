@@ -72,11 +72,11 @@ const Product = ({ product, updateProducts, history, addToCart }) => {
       </Link>
       <button
         onClick={() => onClickEdit(product.user_id, product.id)}
-        className='btn'
+        className='btn delete'
       >
         Delete
       </button>
-      <button onClick={() => onClickAdd(product)} className='btn'>
+      <button onClick={() => onClickAdd(product)} className='btn add'>
         Add to order
       </button>
     </li>

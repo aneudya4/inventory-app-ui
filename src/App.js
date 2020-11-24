@@ -5,7 +5,6 @@ import Header from './components/header/Header';
 import Dashboard from './components/dashboard/Dashboard';
 import Homepage from './components/homepage/Homepage';
 import ApiContext from './apiContext';
-import PrivateRoute from './components/privateRoutes/PrivateRoutes';
 import app from './firebaseConfig';
 
 import { Route } from 'react-router-dom';
@@ -24,8 +23,6 @@ function App() {
   return (
     <div className='App'>
       <ApiContext.Provider value={value}>
-        {/* <PrivateRoute exact path='/auth/dashboard' component={Dashboard} /> */}
-
         <Route
           exact
           path={['/', '/accounts/register', '/accounts/login']}

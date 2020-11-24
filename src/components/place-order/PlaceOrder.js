@@ -1,9 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ProductsToOrder from '../productsToOrder/ProductsToOrder';
 import './placeOrder.css';
+import numeral from 'numeral';
 import config from '../config';
-const PlaceOrder = ({ products, cart, userId, addNewOrder, history }) => {
+const PlaceOrder = ({
+  products,
+  cart,
+  userId,
+  addNewOrder,
+  history,
+  deleteCartProduct,
+}) => {
+  const [orderError, setOrderError] = useState('');
+
   const productDetails = cart.map((c) => products.find((p) => p.id === c.id));
+  const orderTotal = productDetails.reduce((a, b, i) => {
+    return parseFloat(a) + parseFloat(b.unit_price) * cart[i].quantity;
+  }, 0);
+
   const onSubmit = (e) => {
     e.preventDefault();
     const { client_name, client_email } = e.target.elements;
@@ -30,7 +44,7 @@ const PlaceOrder = ({ products, cart, userId, addNewOrder, history }) => {
         history.push('/auth/dashboard/overview');
       })
       .catch((error) => {
-        console.error({ error });
+        setOrderError(error.message);
       });
   };
   return (
@@ -54,24 +68,28 @@ const PlaceOrder = ({ products, cart, userId, addNewOrder, history }) => {
             required
           />
         </label>
+        <button className='btn'>Submit</button>
+        {orderError && <span className='validation-errors'>{orderError}</span>}
         <div className='order-headers'>
           <span>Product</span>
           <span>Price</span>
           <span>Quantity</span>
           <span>Total</span>
         </div>
-        <div className='order-details new-order'>
+        <div className='new-order'>
           {productDetails.map((p, i) => (
             <ProductsToOrder
               key={p.id}
               product={p}
               cart={cart}
+              deleteCartProduct={deleteCartProduct}
               quantity={cart[i].quantity}
             />
           ))}
         </div>
-
-        <button className='btn'>Submit</button>
+        <div className='order-total'>
+          <span>Total: {numeral(orderTotal).format('($0,0)')}</span>
+        </div>
       </form>
     </div>
   );

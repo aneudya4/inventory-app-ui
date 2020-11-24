@@ -2,12 +2,10 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  /* overflow: auto; */
-  /* height: 100vh; */
 }
 
 .nav {
-  display: flex;
+  z-index: 3;
   flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
@@ -18,6 +16,18 @@
   height: 100%;
 }
 
+.nav-in {
+  position: fixed;
+  left: 0;
+  transition: all ease-in 0.5s;
+}
+
+.nav-out {
+  top: 0;
+  position: fixed;
+  left: -1000px;
+  transition: all ease-out 1.3s;
+}
 .nav p {
   margin: 10px 0;
   padding: 0 10px;
@@ -66,8 +76,14 @@
 }
 
 @media all and (min-width: 925px) {
+  .menu {
+    display: none;
+  }
   .dashboard {
     flex-direction: row;
+  }
+  .nav-out {
+    left: 0px;
   }
 
   .dashboard::before {

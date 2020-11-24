@@ -8,10 +8,11 @@
 }
 
 .add-product h3 {
+  margin-top: 50px;
   font-size: 40px;
 }
 .add-product form {
-  width: 500px;
+  max-width: 500px;
   margin: 20px auto;
   text-transform: capitalize;
   height: fit-content;

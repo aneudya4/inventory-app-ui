@@ -2,11 +2,17 @@
   text-transform: capitalize;
 }
 
+.product-list h3 {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
 .product-list ul {
   padding: 10px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .product-list ul li {
@@ -38,13 +44,17 @@
   padding: 10px 15px;
   margin: 0 10px;
 }
-
 .product-list ul li button {
-  background-color: tomato;
   padding: 10px 15px;
   margin: 0 10px;
 }
 
+button.delete {
+  background-color: tomato;
+}
+button.add {
+  background-color: rgb(10, 78, 117);
+}
 .product-list ul::after {
   content: '';
   display: block;
