@@ -1,12 +1,23 @@
-import React, { useContext } from 'react';
-import app from '../../firebaseConfig';
-import apiCoptext from '../../apiContext';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import img from './images/inv.jpeg';
+import './homepage.css';
 const HomePage = () => {
-  const { user } = useContext(apiCoptext);
-
   return (
-    <div>
-      <span>Mgg</span>
+    <div className='banner'>
+      <div id='overlay'></div>
+      <div className='banner-info'>
+        <h2>Invy helps you track of your sales and your products in stock</h2>
+        <p>
+          Easily <span>add</span> and <span>delete</span> products, add orders
+          and <span>keep track</span> of them all
+        </p>
+        <Link to='./accounts/register'>Register</Link>
+        <Link to='./accounts/login'>login</Link>
+      </div>
+      <div className='banner-img'>
+        <img src={img} alt='banner' />
+      </div>
     </div>
   );
 };

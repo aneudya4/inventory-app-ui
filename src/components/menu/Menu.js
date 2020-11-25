@@ -3,7 +3,7 @@ import './menu.css';
 const Menu = ({ showNav, handleClick }) => {
   return (
     <div className='menu'>
-      <input type='checkbox' id='toggle-checkbox' checked={showNav} />
+      <input type='checkbox' id='toggle-checkbox' defaultChecked={showNav} />
       <label
         onClick={() => handleClick(!showNav)}
         htmlFor='toggle-checkbox'

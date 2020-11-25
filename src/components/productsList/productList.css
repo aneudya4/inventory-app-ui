@@ -1,5 +1,6 @@
 .product-list {
   text-transform: capitalize;
+  max-width: 1200px;
 }
 
 .product-list h3 {
@@ -12,15 +13,16 @@
   padding: 10px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: space-around;
 }
 
 .product-list ul li {
-  max-width: 450px;
+  width: 400px;
   margin-bottom: 10px;
-  border: 1px solid black;
+  border: 1px solid rgba(190, 186, 186, 0.541);
   text-align: center;
   padding: 15px;
+  border-radius: 5px;
 }
 .product-list li span {
   font-size: 20px;
@@ -37,6 +39,11 @@
 .product-list li label {
   margin: 0 0 10px 0;
   width: 200px;
+}
+
+.product-list li label input {
+  width: 50px;
+  text-align: center;
 }
 
 .product-list ul li a {
@@ -58,7 +65,7 @@ button.add {
 .product-list ul::after {
   content: '';
   display: block;
-  width: 355px;
+  width: 400px;
 }
 
 .place-order form {

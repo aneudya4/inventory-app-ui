@@ -1,12 +1,12 @@
 import React from 'react';
-import numeral from 'numeral';
+import { formatter } from '../ultils/index';
 
 const PastOrder = ({ order }) => {
   return (
     <div className='past-orders orders'>
       <span> {order.client}</span>
       <span>{order.client_email}</span>
-      <span>{numeral(order.order_total).format('($0,0)')}</span>
+      <span>{formatter.format(order.order_total)}</span>
     </div>
   );
 };

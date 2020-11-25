@@ -18,8 +18,9 @@ const AddProduct = ({ userId, history, addNewProduct }) => {
       description: product_description.value,
       stock_total: parseInt(product_stock.value),
       provider: product_provider.value,
-      user_id: parseInt(userId),
+      user_id: userId,
     };
+    console.log(product, 'MMG');
     fetch(`${config.API_ENDPOINT}/products/`, {
       method: 'POST',
       headers: {

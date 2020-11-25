@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ProductsToOrder from '../productsToOrder/ProductsToOrder';
 import './placeOrder.css';
-import numeral from 'numeral';
+import { formatter } from '../ultils/index';
 import config from '../config';
 const PlaceOrder = ({
   products,
@@ -49,7 +49,7 @@ const PlaceOrder = ({
   };
   return (
     <div className='place-order'>
-      <form onSubmit={onSubmit}>
+      <form id='place-order-form' onSubmit={onSubmit}>
         <label>
           Client name:
           <input
@@ -88,7 +88,7 @@ const PlaceOrder = ({
           ))}
         </div>
         <div className='order-total'>
-          <span>Total: {numeral(orderTotal).format('($0,0)')}</span>
+          <span>Total: {formatter.format(orderTotal)}</span>
         </div>
       </form>
     </div>

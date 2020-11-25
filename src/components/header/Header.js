@@ -34,7 +34,7 @@ const Header = (props) => {
   };
   return (
     <header>
-      <h1>Logo</h1>
+      <h1>Invy</h1>
       <nav>
         <ul>{renderAuthNav()}</ul>
       </nav>

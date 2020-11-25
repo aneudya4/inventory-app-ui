@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import config from '../config';
-import { Link } from 'react-router-dom';
-import numeral from 'numeral';
+import { Link, withRouter } from 'react-router-dom';
+import { formatter } from '../ultils/index';
 
 const Product = ({ product, updateProducts, history, addToCart }) => {
   const [input, setInput] = useState(1);
@@ -47,7 +47,7 @@ const Product = ({ product, updateProducts, history, addToCart }) => {
       </span>
       <span>
         Product Price:
-        <strong>{numeral(product.unit_price).format('($0,0)')}</strong>
+        <strong>{formatter.format(product.unit_price)}</strong>
       </span>
       <span>
         Description:<strong>{product.description}</strong>
@@ -63,7 +63,7 @@ const Product = ({ product, updateProducts, history, addToCart }) => {
         />
         {error && (
           <span className='validation-errors'>
-            {`Quantity cant be less than 0 or more than ${product.stock_total}`}
+            {`Current stock is  ${product.stock_total}`}
           </span>
         )}
       </label>
@@ -83,4 +83,4 @@ const Product = ({ product, updateProducts, history, addToCart }) => {
   );
 };
 
-export default Product;
+export default withRouter(Product);

@@ -5,7 +5,7 @@ import apiContext from '../../apiContext';
 import { Link } from 'react-router-dom';
 import './login.css';
 const Login = ({ history }) => {
-  const { user } = useContext(apiContext);
+  const { user, setUser } = useContext(apiContext);
   const [loginError, setLoginError] = useState(false);
 
   const handleLogin = useCallback(
@@ -25,10 +25,26 @@ const Login = ({ history }) => {
     [history]
   );
 
+  const onClickDemo = useCallback(
+    async (e) => {
+      e.preventDefault();
+
+      try {
+        await app
+          .auth()
+          .signInWithEmailAndPassword('demoaccount@gmail.com', '123456');
+
+        history.push('/auth/dashboard/overview');
+      } catch (error) {
+        setLoginError(true);
+      }
+    },
+    [history]
+  );
+
   if (user) {
     return <Redirect to='/auth/dashboard/overview' />;
   }
-
   return (
     <div className='login-form form'>
       <form onSubmit={handleLogin}>
@@ -55,6 +71,9 @@ const Login = ({ history }) => {
             placeholder='your password'
           />
         </label>
+        <span onClick={onClickDemo} className='btn'>
+          DEMO
+        </span>
 
         <button className='btn'>Login</button>
         <span>

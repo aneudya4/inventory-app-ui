@@ -21,7 +21,7 @@ const Dashboard = (props) => {
   const [orders, setOrders] = useState([]);
   const [cart, setCart] = useState([]);
   const [errors, setErrors] = useState(false);
-  const { user, setUser } = useContext(apiContext);
+  const { user } = useContext(apiContext);
   const [showNotification, setShowNotification] = useState(false);
 
   const addNewOrder = (order) => {
@@ -32,6 +32,7 @@ const Dashboard = (props) => {
   const handleAddToCart = (product) => {
     const productInCart = cart.find((p) => p.id === product.id);
     const filteredCart = cart.filter((p) => p.id !== product.id);
+
     setShowNotification(true);
     if (productInCart) {
       productInCart.quantity = productInCart.quantity + product.quantity;
@@ -47,9 +48,7 @@ const Dashboard = (props) => {
   };
 
   const deleteCartProduct = (id) => {
-    console.log('mmg', id);
     const updatedCart = cart.filter((p) => p.id !== id);
-    console.log(updatedCart);
     setCart(updatedCart);
   };
 
@@ -131,7 +130,6 @@ const Dashboard = (props) => {
         .catch((error) => {
           setErrors(true);
           setOrders([]);
-          console.error(error);
         });
     }
   }, [userDbData, setProducts]);

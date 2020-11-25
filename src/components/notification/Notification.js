@@ -5,7 +5,7 @@ const Notification = ({ message }) => {
     <div className='notification'>
       <span>
         {message}
-        <i class='fas fa-cart-arrow-down'></i>
+        <i className='fas fa-cart-arrow-down'></i>
       </span>
     </div>
   );

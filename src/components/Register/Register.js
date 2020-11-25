@@ -9,11 +9,12 @@ import './register.css';
 const Register = ({ history }) => {
   const { user } = useContext(apiContext);
   const [validateForm, setValidateForm] = useState(false);
+  const [registerError, setRegisterError] = useState(false);
+
   const handleRegister = useCallback(
     async (e) => {
       e.preventDefault();
       const { name, email, password } = e.target.elements;
-      console.log(name.value, email.value, 'HERE MMGF');
       if (password.value.length < 6) {
         setValidateForm(true);
         return;
@@ -30,7 +31,7 @@ const Register = ({ history }) => {
         await postUser(name.value, email.value);
         history.push('/accounts/login');
       } catch (error) {
-        alert('error');
+        setRegisterError(true);
       }
     },
     [history]
@@ -58,6 +59,10 @@ const Register = ({ history }) => {
             *Password has to be at least 6 characters
           </span>
         )}
+        {registerError && (
+          <span className='validation-errors'>*User already exists</span>
+        )}
+
         <label htmlFor='email'>
           Your Name<span>*</span>
           <input
