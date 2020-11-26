@@ -1,14 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import Menu from '../menu/Menu';
 import DashboardNav from '../dashboardNav/DashboardNav';
 const DashboardOptions = ({ match }) => {
   const [showNav, setShowNav] = useState(false);
-  const handleShowNav = (bool) => {
-    setShowNav(bool);
-  };
+  const handleShowNav = useCallback(
+    (bool) => {
+      setShowNav(bool);
+    },
+    [setShowNav]
+  );
   return (
     <>
-      <Menu handleClick={handleShowNav} showNav={showNav} />
+      <Menu handleShowNav={handleShowNav} showNav={showNav} />
 
       <DashboardNav handleClick={handleShowNav} showNav={showNav} />
     </>

@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link, NavLink, withRouter, Redirect } from 'react-router-dom';
+import { Link, NavLink, withRouter } from 'react-router-dom';
 import app from '../../firebaseConfig';
 import apiContext from '../../apiContext';
 

@@ -9,10 +9,8 @@ import AddProduct from '../addProduct/AddProduct';
 import EditProduct from '../editProduct/EditProduct';
 import PlaceOrder from '../place-order/PlaceOrder';
 import Notification from '../notification/Notification';
-
 import apiContext from '../../apiContext';
 import config from '../config';
-
 import './dashboard.css';
 
 const Dashboard = (props) => {
@@ -44,7 +42,7 @@ const Dashboard = (props) => {
     }
     setTimeout(() => {
       setShowNotification(false);
-    }, 1000);
+    }, 1500);
   };
 
   const deleteCartProduct = (id) => {
@@ -65,86 +63,98 @@ const Dashboard = (props) => {
   };
 
   useEffect(() => {
-    if (user !== null) {
-      fetch(`${config.API_ENDPOINT}/users/${user.email}`, {
-        method: 'GET',
-        headers: {
-          'content-type': 'application/json',
-          Authorization: `Bearer ${config.API_KEY}`,
-        },
-      })
-        .then((data) => data.json())
-        .then(({ id, name }) => {
+    if (!!user) {
+      const fetchUserData = async () => {
+        try {
+          const data = await fetch(
+            `${config.API_ENDPOINT}/users/${user.email}`,
+            {
+              method: 'GET',
+              headers: {
+                'content-type': 'application/json',
+                Authorization: `Bearer ${config.API_KEY}`,
+              },
+            }
+          );
+          const { id, name } = await data.json();
           const newUserData = { ...user, id, name };
           setUserDbData(newUserData);
-        });
+        } catch (error) {
+          setErrors(true);
+          setUserDbData(null);
+        }
+      };
+      fetchUserData();
     }
   }, [user]);
 
   useEffect(() => {
-    if (userDbData !== null) {
-      fetch(`${config.API_ENDPOINT}/products/${userDbData.id}`, {
-        method: 'GET',
-        headers: {
-          'content-type': 'application/json',
-          Authorization: `Bearer ${config.API_KEY}`,
-        },
-      })
-        .then((res) => {
-          if (res.ok) {
-            return res.json();
-          }
-        })
-        .then((DBProducts) => {
-          if (DBProducts) {
-            return setProducts(DBProducts);
-          }
-        })
-        .catch((error) => {
+    if (userDbData) {
+      const fetchProducts = async () => {
+        try {
+          const data = await fetch(
+            `${config.API_ENDPOINT}/products/${userDbData.id}`,
+            {
+              method: 'GET',
+              headers: {
+                'content-type': 'application/json',
+                Authorization: `Bearer ${config.API_KEY}`,
+              },
+            }
+          );
+          const productsJson = await data.json();
+          setProducts(productsJson);
+        } catch (error) {
           setErrors(true);
           setProducts([]);
-          console.error(error);
-        });
+        }
+      };
+      fetchProducts();
     }
   }, [userDbData, setProducts]);
 
   useEffect(() => {
-    if (userDbData !== null) {
-      fetch(`${config.API_ENDPOINT}/orders/${userDbData.id}`, {
-        method: 'GET',
-        headers: {
-          'content-type': 'application/json',
-          Authorization: `Bearer ${config.API_KEY}`,
-        },
-      })
-        .then((res) => {
-          if (res.ok) {
-            return res.json();
-          }
-        })
-        .then((orders) => {
-          if (orders) {
-            setOrders(orders);
-          }
-        })
-        .catch((error) => {
-          setErrors(true);
-          setOrders([]);
-        });
+    if (userDbData) {
+      try {
+        const fetchOrders = async () => {
+          const data = await fetch(
+            `${config.API_ENDPOINT}/orders/${userDbData.id}`,
+            {
+              method: 'GET',
+              headers: {
+                'content-type': 'application/json',
+                Authorization: `Bearer ${config.API_KEY}`,
+              },
+            }
+          );
+          const ordersJson = await data.json();
+          setOrders(ordersJson);
+        };
+        fetchOrders();
+      } catch (error) {
+        setErrors(true);
+        setOrders([]);
+      }
     }
-  }, [userDbData, setProducts]);
+  }, [userDbData, setOrders]);
 
   if (!user) {
     return <Redirect to='/accounts/login' />;
   }
   return (
     <div className='dashboard'>
-      {showNotification && <Notification message='added' />}
+      <Notification message='added' showNotification={showNotification} />
       <Route path={`${props.match.path}`} component={DashboardOptions} />
       <Route
         path={`${props.match.path}/overview`}
         render={(routerProps) => (
-          <Overview {...routerProps} products={products} orders={orders} />
+          <Overview
+            {...routerProps}
+            products={products}
+            userId={userDbData}
+            setOrders={setOrders}
+            orders={orders}
+          />
         )}
       />
       <Route

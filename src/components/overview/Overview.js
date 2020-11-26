@@ -1,8 +1,7 @@
 import React from 'react';
-import numeral from 'numeral';
-import OrdersList from '../OrdersList/OrdersList';
+import { formatter } from '../ultils/index';
 import './overview.css';
-const Overview = ({ products, orders }) => {
+const Overview = ({ products, orders, setOrders, user }) => {
   const totalSales = orders.reduce(function (a, b) {
     return parseFloat(a) + parseInt(b.order_total);
   }, 0);
@@ -17,7 +16,7 @@ const Overview = ({ products, orders }) => {
       <div className='inventory-details'>
         <div className='details-card'>
           <i className='fas fa-dollar-sign'></i>
-          <span>{numeral(totalSales).format('($0,0)')}</span>
+          <span>{formatter.format(totalSales)}</span>
           <span>Total Sales</span>
         </div>
         <div className='details-card'>
