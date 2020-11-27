@@ -1,7 +1,7 @@
 import React from 'react';
 import { formatter } from '../ultils/index';
 import './overview.css';
-const Overview = ({ products, orders, setOrders, user }) => {
+const Overview = ({ products, orders }) => {
   const totalSales = orders.reduce(function (a, b) {
     return parseFloat(a) + parseInt(b.order_total);
   }, 0);

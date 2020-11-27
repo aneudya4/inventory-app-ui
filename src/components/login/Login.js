@@ -5,7 +5,7 @@ import apiContext from '../../apiContext';
 import { Link } from 'react-router-dom';
 import './login.css';
 const Login = ({ history }) => {
-  const { user, setUser } = useContext(apiContext);
+  const { user } = useContext(apiContext);
   const [loginError, setLoginError] = useState(false);
 
   const handleLogin = useCallback(
@@ -59,6 +59,7 @@ const Login = ({ history }) => {
             name='email'
             type='email'
             placeholder='jhonDoe@email.com'
+            required
           />
         </label>
 
@@ -69,6 +70,7 @@ const Login = ({ history }) => {
             name='password'
             type='password'
             placeholder='your password'
+            required
           />
         </label>
         <span onClick={onClickDemo} className='btn'>

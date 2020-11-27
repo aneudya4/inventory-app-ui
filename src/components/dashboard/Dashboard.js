@@ -13,13 +13,12 @@ import apiContext from '../../apiContext';
 import config from '../config';
 import './dashboard.css';
 
-const Dashboard = (props) => {
+const Dashboard = ({ match, history, location }) => {
+  const { user } = useContext(apiContext);
   const [userDbData, setUserDbData] = useState(null);
   const [products, setProducts] = useState([]);
   const [orders, setOrders] = useState([]);
   const [cart, setCart] = useState([]);
-  const [errors, setErrors] = useState(false);
-  const { user } = useContext(apiContext);
   const [showNotification, setShowNotification] = useState(false);
 
   const addNewOrder = (order) => {
@@ -80,13 +79,12 @@ const Dashboard = (props) => {
           const newUserData = { ...user, id, name };
           setUserDbData(newUserData);
         } catch (error) {
-          setErrors(true);
-          setUserDbData(null);
+          history.push('/server-error');
         }
       };
       fetchUserData();
     }
-  }, [user]);
+  }, [user, history]);
 
   useEffect(() => {
     if (userDbData) {
@@ -105,13 +103,12 @@ const Dashboard = (props) => {
           const productsJson = await data.json();
           setProducts(productsJson);
         } catch (error) {
-          setErrors(true);
-          setProducts([]);
+          history.push('/server-error');
         }
       };
       fetchProducts();
     }
-  }, [userDbData, setProducts]);
+  }, [userDbData, history]);
 
   useEffect(() => {
     if (userDbData) {
@@ -132,33 +129,30 @@ const Dashboard = (props) => {
         };
         fetchOrders();
       } catch (error) {
-        setErrors(true);
-        setOrders([]);
+        history.push('/server-error');
       }
     }
-  }, [userDbData, setOrders]);
-
-  if (!user) {
+  }, [userDbData, history]);
+  if (user === null) {
     return <Redirect to='/accounts/login' />;
   }
   return (
     <div className='dashboard'>
       <Notification message='added' showNotification={showNotification} />
-      <Route path={`${props.match.path}`} component={DashboardOptions} />
+      <Route path={`${match.path}`} component={DashboardOptions} />
       <Route
-        path={`${props.match.path}/overview`}
+        path={`${match.path}/overview`}
         render={(routerProps) => (
           <Overview
             {...routerProps}
             products={products}
-            userId={userDbData}
-            setOrders={setOrders}
+            user={user}
             orders={orders}
           />
         )}
       />
       <Route
-        path={`${props.match.path}/products`}
+        path={`${match.path}/products`}
         render={(routerProps) =>
           products.length > 0 ? (
             <ProductsList
@@ -174,7 +168,7 @@ const Dashboard = (props) => {
         }
       />
       <Route
-        path={`${props.match.path}/past-order`}
+        path={`${match.path}/past-order`}
         render={(routerProps) =>
           orders.length > 0 ? (
             <PastOrdersList {...routerProps} orders={orders} />
@@ -184,17 +178,17 @@ const Dashboard = (props) => {
         }
       />
       <Route
-        path={`${props.match.path}/add-products`}
+        path={`${match.path}/add-products`}
         render={(routerProps) => (
           <AddProduct
             {...routerProps}
-            userId={userDbData.id}
+            user={userDbData}
             addNewProduct={addNewProduct}
           />
         )}
       />
       <Route
-        path={`${props.match.path}/edit-product/:productId`}
+        path={`${match.path}/edit-product/:productId`}
         render={(routerProps) => (
           <EditProduct
             {...routerProps}
@@ -204,7 +198,7 @@ const Dashboard = (props) => {
         )}
       />
       <Route
-        path={`${props.match.path}/order`}
+        path={`${match.path}/order`}
         render={(routerProps) => (
           <PlaceOrder
             {...routerProps}
@@ -212,7 +206,7 @@ const Dashboard = (props) => {
             cart={cart}
             addNewOrder={addNewOrder}
             deleteCartProduct={deleteCartProduct}
-            userId={userDbData.id}
+            user={userDbData}
           />
         )}
       />

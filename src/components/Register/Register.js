@@ -20,17 +20,19 @@ const Register = ({ history }) => {
         return;
       }
       try {
+        await postUser(name.value, email.value);
         await app
           .auth()
           .createUserWithEmailAndPassword(email.value, password.value)
           .then(function (result) {
+            console.log('hjere papi');
             return result.user.updateProfile({
               displayName: name.value,
             });
           });
-        await postUser(name.value, email.value);
         history.push('/accounts/login');
       } catch (error) {
+        history.push('/server-error');
         setRegisterError(true);
       }
     },

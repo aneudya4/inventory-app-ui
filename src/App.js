@@ -5,9 +5,10 @@ import Header from './components/header/Header';
 import Dashboard from './components/dashboard/Dashboard';
 import Homepage from './components/homepage/Homepage';
 import ApiContext from './apiContext';
+import ServerError from './components/server-error/ServerError';
 import app from './firebaseConfig';
 
-import { Route } from 'react-router-dom';
+import { Route, Redirect, Switch } from 'react-router-dom';
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
 
@@ -25,12 +26,16 @@ function App() {
       <ApiContext.Provider value={value}>
         <Route
           exact
-          path={['/', '/accounts/register', '/accounts/login']}
+          path={['*', '/', '/accounts/register', '/accounts/login']}
           component={Header}
         />
-        <Route path='/auth/dashboard' component={Dashboard} />
-        <Route path='/accounts' component={SignUpWrapper} />
-        <Route exact path='/' component={Homepage} />
+        <Switch>
+          <Route path='/auth/dashboard' component={Dashboard} />
+          <Route path='/accounts' component={SignUpWrapper} />
+          <Route exact path='/server-error' component={ServerError} />
+          <Route exact path='/' component={Homepage} />
+          <Route exact path='*' component={Homepage} />
+        </Switch>
       </ApiContext.Provider>
     </div>
   );

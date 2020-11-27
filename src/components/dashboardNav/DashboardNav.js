@@ -17,7 +17,7 @@ const DashboardNav = ({ match, history, showNav, handleClick }) => {
   return (
     <aside className={`nav ${showNavigation}`}>
       <h2>
-        <Link to='/'>Logo</Link>
+        <Link to='/'>Invy</Link>
       </h2>
       <p>
         Welcome <span>{user.displayName}</span>

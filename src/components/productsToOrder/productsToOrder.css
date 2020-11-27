@@ -5,12 +5,12 @@
 .dashboard .place-order #place-order-form {
   border: none;
   padding: 5px;
-  /* margin: 0 auto; */
   width: 100%;
 }
 
 .place-order form button {
-  margin-top: 0;
+  max-width: 150px;
+  margin: 10px auto;
 }
 
 .place-order .validation-errors {

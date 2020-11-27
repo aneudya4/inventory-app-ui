@@ -2,7 +2,7 @@ import React from 'react';
 import config from '../config';
 import ProductForms from '../productsForm/ProductsForm';
 import './addProduct.css';
-const AddProduct = ({ userId, history, addNewProduct }) => {
+const AddProduct = ({ user, history, addNewProduct }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const {
@@ -18,9 +18,8 @@ const AddProduct = ({ userId, history, addNewProduct }) => {
       description: product_description.value,
       stock_total: parseInt(product_stock.value),
       provider: product_provider.value,
-      user_id: userId,
+      user_id: user.id,
     };
-    console.log(product, 'MMG');
     fetch(`${config.API_ENDPOINT}/products/`, {
       method: 'POST',
       headers: {

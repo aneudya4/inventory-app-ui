@@ -6,7 +6,7 @@ import config from '../config';
 const PlaceOrder = ({
   products,
   cart,
-  userId,
+  user,
   addNewOrder,
   history,
   deleteCartProduct,
@@ -24,7 +24,7 @@ const PlaceOrder = ({
     const order = {
       client: client_name.value,
       client_email: client_email.value,
-      user_id: userId,
+      user_id: user.id,
       products: cart,
     };
     fetch(`${config.API_ENDPOINT}/orders/`, {

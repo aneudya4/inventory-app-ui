@@ -1,0 +1,25 @@
+.server-error {
+  width: 100%;
+  text-align: center;
+}
+
+.server-error .img-container {
+  width: 100%;
+  max-width: 700px;
+  margin: 110px auto;
+  margin-bottom: 30px;
+}
+
+.server-error .img-container img {
+  width: 100%;
+}
+.error-info p {
+  font-size: 20px;
+  margin: 10px;
+}
+.error-info a {
+  background: coral;
+  display: inline-block;
+  padding: 10px 15px;
+  border-radius: 4px;
+}
