@@ -65,9 +65,9 @@ const DashboardNav = ({ match, history, showNav, handleClick }) => {
                 handleClick(!showNav);
               }}
               activeClassName='selected'
-              to={`${match.path}/past-order`}
+              to={`${match.path}/order-history`}
             >
-              Past orders
+              Order history
             </NavLink>
           </li>
           <li>

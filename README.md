@@ -1,70 +1,100 @@
-# Getting Started with Create React App
+<h1 align="center">Inventory App</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h2 align="center">
 
-## Available Scripts
+</h2>
 
-In the project directory, you can run:
+<p align="center">
+  
+<img src="https://img.shields.io/badge/made%20by-aneudya4-blue.svg" >
 
-### `npm start`
+<img src="https://img.shields.io/badge/React-17.0.1-blue.svg">
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat">
+</p>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<img src="./readme_assets/homepage.png" width="100%">
 
-### `npm test`
+<h2 align="center"><a  href="#">Live Demo</a></h2>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### [Contributions are Welcome](https://github.com/aneudya4/inventory-app-ui.git)
 
-### `npm run build`
+## Description
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<p align="center">
+<img src="./readme_assets/overview.png" width="80%"></p>
+Invy is a Inventory Mangagment app implemented with React, Node, Express and PostgresSQL. It will help the user to keep track of products in stock and sales.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## How Register
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Invy App Registration:
 
-### `npm run eject`
+- **START** Click the Register button on the Navigation or on the banner.
+- **Fill u and submit** Fill up the input box for Name,Email and Password.
+- **Register** Click the Register button
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<p align="center"><img  src="./readme_assets/register.gif" width="70%"></p>
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Invy App Demo Account:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- **START** Click the Login button on the Navigation or on the banner.
+- **Demo** Click the Demo button
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+<p align="center"><img  src="./readme_assets/demo.gif" width="70%"></p>
 
-## Learn More
+## About the project:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Invy app:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Invy app is implemented with React, Node, Express,Firebase for authentication and postgresSQL
 
-### Code Splitting
+### Overview:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+User will see a Sumarry of the activities
 
-### Analyzing the Bundle Size
+<p align="center"><img  src="./readme_assets/overview.png" width="70%"></p>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### The Products page:
 
-### Making a Progressive Web App
+User will see a list of products added by themselves
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+<p align="center"><img  src="./readme_assets/products.png" width="70%"></p>
 
-### Advanced Configuration
+### The Place order page:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+User will see a list of products added by to be sold
 
-### Deployment
+<p align="center"><img  src="./readme_assets/placeorder.png" width="70%"></p>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### The Order history page:
 
-### `npm run build` fails to minify
+User will see a list of past orders with details about the client
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<p align="center"><img  src="./readme_assets/orderhistory.png" width="70%"></p>
+
+### The Add products page:
+
+User will see a form to fill with information about the product to add.
+
+<p align="center"><img  src="./readme_assets/addproduct.png" width="70%"></p>
+## Project setup:
+
+```bash
+git clone https://github.com/aneudya4/inventory-app-ui.git
+cd inventory-app-ui
+npm install
+npm run start
+open http://localhost:3000
+```
+
+## NOTE:
+
+- **issue with fetching** You will need to connect to a server, here is the repo for the local server
+
+<h2 align="center"><a  href="https://github.com/aneudya4/inventory-app-server
+">Local Server Repo</a></h2>
+
+## Future scope:
+
+- Adding a details view for past orders
+- Mergin all orders placed by the same client

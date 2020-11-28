@@ -68,6 +68,7 @@ const Register = ({ history }) => {
         <label htmlFor='email'>
           Your Name<span>*</span>
           <input
+            autoComplete='off'
             id='name'
             name='name'
             type='text'
@@ -84,6 +85,7 @@ const Register = ({ history }) => {
             type='email'
             placeholder='JohnDoe@email.com'
             required
+            autoComplete='off'
           />
         </label>
         <label htmlFor='password'>
@@ -94,6 +96,7 @@ const Register = ({ history }) => {
             type='password'
             placeholder='Create a Password'
             required
+            autoComplete='off'
           />
         </label>
         <button className='btn'>Register</button>

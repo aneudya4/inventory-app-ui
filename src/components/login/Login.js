@@ -60,6 +60,7 @@ const Login = ({ history }) => {
             type='email'
             placeholder='jhonDoe@email.com'
             required
+            autocomplete='off'
           />
         </label>
 
@@ -71,6 +72,7 @@ const Login = ({ history }) => {
             type='password'
             placeholder='your password'
             required
+            autocomplete='off'
           />
         </label>
         <span onClick={onClickDemo} className='btn'>

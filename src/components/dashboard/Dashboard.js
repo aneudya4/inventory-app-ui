@@ -168,7 +168,7 @@ const Dashboard = ({ match, history, location }) => {
         }
       />
       <Route
-        path={`${match.path}/past-order`}
+        path={`${match.path}/order-history`}
         render={(routerProps) =>
           orders.length > 0 ? (
             <PastOrdersList {...routerProps} orders={orders} />
