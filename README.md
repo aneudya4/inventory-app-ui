@@ -77,7 +77,8 @@ User will see a list of past orders with details about the client
 User will see a form to fill with information about the product to add.
 
 <p align="center"><img  src="./readme_assets/addproduct.png" width="70%"></p>
-## Project setup:
+
+### Project setup:
 
 ```bash
 git clone https://github.com/aneudya4/inventory-app-ui.git
