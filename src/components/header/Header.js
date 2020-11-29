@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import './header.css';
-import apiContext from '../../apiContext';
+import ApiContext from '../../apiContext';
 import app from '../../firebaseConfig';
 
 const Header = (props) => {
-  const { user } = useContext(apiContext);
+  const { user } = useContext(ApiContext);
   const renderAuthNav = () => {
     if (!user) {
       return (
@@ -14,7 +14,7 @@ const Header = (props) => {
             <Link to='/accounts/register'>Register</Link>
           </li>
           <li>
-            <Link to='/accounts/login'>login</Link>
+            <Link to='/accounts/login'>Login</Link>
           </li>
         </>
       );

@@ -31,7 +31,6 @@ const Overview = ({ products, orders }) => {
         </div>
       </div>
     </div>
-    // </Dashboard>
   );
 };
 

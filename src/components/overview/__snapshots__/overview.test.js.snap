@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test on the <Overview/> Component renders Overview without crashing 1`] = `
+<div
+  className="overview"
+>
+  <h2>
+    Overview
+  </h2>
+  <div
+    className="inventory-details"
+  >
+    <div
+      className="details-card"
+    >
+      <i
+        className="fas fa-dollar-sign"
+      />
+      <span>
+        $2,843.00
+      </span>
+      <span>
+        Total Sales
+      </span>
+    </div>
+    <div
+      className="details-card"
+    >
+      <i
+        className="fas fa-box-open"
+      />
+      <span>
+        1
+      </span>
+      <span>
+        Total Orders
+      </span>
+    </div>
+    <div
+      className="details-card"
+    >
+      <i
+        className="fas fa-boxes"
+      />
+      <span>
+        18
+      </span>
+      <span>
+        Products in stock
+      </span>
+    </div>
+  </div>
+</div>
+`;

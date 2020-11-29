@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test on the <Login/> Component renders App without crashing 1`] = `
+<div
+  className="login-form form"
+>
+  <form
+    onSubmit={[Function]}
+  >
+    <h3>
+      Log In
+    </h3>
+    <label
+      htmlFor="email"
+    >
+      Your Email*
+      <input
+        autoComplete="off"
+        id="email"
+        name="email"
+        placeholder="jhonDoe@email.com"
+        required={true}
+        type="email"
+      />
+    </label>
+    <label
+      htmlFor="password"
+    >
+      Your Password*
+      <input
+        autoComplete="off"
+        id="password"
+        name="password"
+        placeholder="your password"
+        required={true}
+        type="password"
+      />
+    </label>
+    <span
+      className="btn"
+      onClick={[Function]}
+    >
+      DEMO
+    </span>
+    <button
+      className="btn"
+    >
+      Login
+    </button>
+    <span>
+      need an account ? 
+      <Link
+        to="./register"
+      >
+        Register
+      </Link>
+    </span>
+  </form>
+</div>
+`;

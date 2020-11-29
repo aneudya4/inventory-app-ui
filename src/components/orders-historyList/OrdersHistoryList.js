@@ -1,7 +1,7 @@
 import React from 'react';
-import PastOrder from '../pastOrder/PastOrder';
-import './pastOrderList.css';
-const PastOrdersList = ({ orders }) => {
+import OrdersHistory from '../orders-history/OrdersHistory';
+import './OrdersHistoryList.css';
+const OrdersHistoryList = ({ orders }) => {
   return (
     <div className='past-order-container'>
       <h3>Order History</h3>
@@ -13,11 +13,11 @@ const PastOrdersList = ({ orders }) => {
 
       <div className='past-order-details order-details'>
         {orders.map((order) => (
-          <PastOrder key={order.id} order={order} />
+          <OrdersHistory key={order.id} order={order} />
         ))}
       </div>
     </div>
   );
 };
 
-export default PastOrdersList;
+export default OrdersHistoryList;

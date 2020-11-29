@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test on the <Homepage/> Component renders Homepage without crashing 1`] = `
+<Fragment>
+  <div
+    className="banner"
+  >
+    <div
+      id="overlay"
+    />
+    <div
+      className="banner-info"
+    >
+      <h2>
+        Invy helps you track all your sales and your products in stock
+      </h2>
+      <p>
+        Easily 
+        <span>
+          add
+        </span>
+         and 
+        <span>
+          delete
+        </span>
+         products, add orders and 
+        <span>
+          keep track
+        </span>
+         of them all
+      </p>
+      <Link
+        to="/accounts/register"
+      >
+        Register
+      </Link>
+      <Link
+        to="/accounts/login"
+      >
+        Login
+      </Link>
+    </div>
+    <div
+      className="banner-img"
+    >
+      <img
+        alt="banner"
+        src="inv.jpeg"
+      />
+    </div>
+  </div>
+</Fragment>
+`;

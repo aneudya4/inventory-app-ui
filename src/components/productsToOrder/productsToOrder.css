@@ -21,6 +21,8 @@
 .place-order .orders {
   justify-content: space-around;
   width: 100%;
+  align-items: center;
+  padding: 0 20px;
 }
 
 .place-order .order-headers span {
@@ -32,6 +34,7 @@
 }
 .orders span {
   width: 180px;
+  /* padding: 0 5px; */
 }
 
 .order-total {
@@ -41,16 +44,25 @@
 }
 .orders span.btn {
   width: fit-content;
+  color: tomato;
+  background: transparent;
+  font-size: 20px;
   position: absolute;
-  background-color: tomato;
-  left: 90%;
+  right: 96%;
 }
-.place-order .order-details span:nth-child(3) {
+.place-order .order-details span:nth-child(4) {
   padding-left: 40px;
 }
 
 @media all and (min-width: 955px) {
+  .place-order {
+    width: 80%;
+    max-width: 1200px;
+  }
   .place-order .order-headers span:nth-child(3) {
     margin-right: 30px;
+  }
+  .orders span.btn {
+    right: 97%;
   }
 }

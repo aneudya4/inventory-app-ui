@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import SignUpWrapper from './components/signUpWrapper/SignUpWrapper';
-import Header from './components/header/Header';
-import Dashboard from './components/dashboard/Dashboard';
-import Homepage from './components/homepage/Homepage';
-import ApiContext from './apiContext';
-import ServerError from './components/server-error/ServerError';
-import NotFound from './components/not-found/NotFound';
-import app from './firebaseConfig';
-
+import AuthFormsWrapper from '../authFormsWrapper/AuthFormsWrapper';
+import Header from '../header/Header';
+import Dashboard from '../dashboard/Dashboard';
+import Homepage from '../homepage/Homepage';
+import ApiContext from '../../apiContext';
+import ServerError from '../server-error/ServerError';
+import NotFound from '../not-found/NotFound';
+import app from '../../firebaseConfig';
 import { Route, Switch } from 'react-router-dom';
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
@@ -32,10 +31,10 @@ function App() {
         />
         <Switch>
           <Route path='/auth/dashboard' component={Dashboard} />
-          <Route path='/accounts' component={SignUpWrapper} />
+          <Route path='/accounts' component={AuthFormsWrapper} />
           <Route exact path='/server-error' component={ServerError} />
           <Route exact path='/' component={Homepage} />
-          <Route exact path='*' component={NotFound} />
+          <Route path='*' component={NotFound} />
         </Switch>
       </ApiContext.Provider>
     </div>

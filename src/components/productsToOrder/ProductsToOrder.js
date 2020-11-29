@@ -7,16 +7,16 @@ const ProductsToOrder = ({ product, quantity, deleteCartProduct }) => {
 
   return (
     <div className='orders order-details '>
-      <span>{product.product_name}</span>
-      <span>{formatter.format(product.unit_price)}</span>
-      <span>{quantity}</span>
-      <span>{formatter.format(productTotal)}</span>
       <span
         className='btn delete'
         onClick={() => deleteCartProduct(product.id)}
       >
-        Delete
+        <i class='fas fa-trash'></i>{' '}
       </span>
+      <span>{product.product_name}</span>
+      <span>{formatter.format(product.unit_price)}</span>
+      <span>{quantity}</span>
+      <span>{formatter.format(productTotal)}</span>
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import React from 'react';
 import { formatter } from '../ultils/index';
 
-const PastOrder = ({ order }) => {
+const OrdersHistory = ({ order }) => {
   return (
     <div className='past-orders orders'>
       <span> {order.client}</span>
@@ -11,4 +11,4 @@ const PastOrder = ({ order }) => {
   );
 };
 
-export default PastOrder;
+export default OrdersHistory;

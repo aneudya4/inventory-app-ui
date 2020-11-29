@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test on the <App/> Component renders App without crashing 1`] = `
+<div
+  className="App"
+>
+  <ContextProvider
+    value={
+      Object {
+        "setUser": [Function],
+        "user": null,
+      }
+    }
+  >
+    <Route
+      component={[Function]}
+      exact={true}
+      path={
+        Array [
+          "/",
+          "/accounts/register",
+          "/accounts/login",
+        ]
+      }
+    />
+    <Switch>
+      <Route
+        component={[Function]}
+        path="/auth/dashboard"
+      />
+      <Route
+        component={[Function]}
+        path="/accounts"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/server-error"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/"
+      />
+      <Route
+        component={[Function]}
+        path="*"
+      />
+    </Switch>
+  </ContextProvider>
+</div>
+`;

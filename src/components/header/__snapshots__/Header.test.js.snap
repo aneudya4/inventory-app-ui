@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test on the <Header/> Component renders Header without crashing 1`] = `
+<header>
+  <Link
+    to="/"
+  >
+    <h1>
+      Invy
+    </h1>
+  </Link>
+  <nav>
+    <ul>
+      <li>
+        <Link
+          to="/accounts/register"
+        >
+          Register
+        </Link>
+      </li>
+      <li>
+        <Link
+          to="/accounts/login"
+        >
+          Login
+        </Link>
+      </li>
+    </ul>
+  </nav>
+</header>
+`;

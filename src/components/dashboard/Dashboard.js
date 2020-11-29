@@ -4,7 +4,7 @@ import Overview from '../overview/Overview';
 import DashboardOptions from '../dashboardOptions/DashboardOptions';
 import ProductsList from '../productsList/ProductsList';
 import EmptyList from '../emptyList/EmptyList';
-import PastOrdersList from '../pastOrdersList/PastOrdersList';
+import OrdersHistoryList from '../orders-historyList/OrdersHistoryList';
 import AddProduct from '../addProduct/AddProduct';
 import EditProduct from '../editProduct/EditProduct';
 import PlaceOrder from '../place-order/PlaceOrder';
@@ -171,7 +171,7 @@ const Dashboard = ({ match, history, location }) => {
         path={`${match.path}/order-history`}
         render={(routerProps) =>
           orders.length > 0 ? (
-            <PastOrdersList {...routerProps} orders={orders} />
+            <OrdersHistoryList {...routerProps} orders={orders} />
           ) : (
             <EmptyList message={'NO ORDERS TO SHOW'} />
           )

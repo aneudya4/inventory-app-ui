@@ -1,8 +1,8 @@
 import React, { useCallback, useContext, useState } from 'react';
-import { Redirect } from 'react-router-dom';
 import app from '../../firebaseConfig';
+import config from '../config';
+import { Redirect, Link } from 'react-router-dom';
 import apiContext from '../../apiContext';
-import { Link } from 'react-router-dom';
 import './login.css';
 const Login = ({ history }) => {
   const { user } = useContext(apiContext);
@@ -32,7 +32,10 @@ const Login = ({ history }) => {
       try {
         await app
           .auth()
-          .signInWithEmailAndPassword('demoaccount@gmail.com', '123456');
+          .signInWithEmailAndPassword(
+            config.DEMO_ACCOUNT_EMAIL,
+            config.DEMO_ACCOUNT_PASSWORD
+          );
 
         history.push('/auth/dashboard/overview');
       } catch (error) {
@@ -60,7 +63,7 @@ const Login = ({ history }) => {
             type='email'
             placeholder='jhonDoe@email.com'
             required
-            autocomplete='off'
+            autoComplete='off'
           />
         </label>
 
@@ -72,7 +75,7 @@ const Login = ({ history }) => {
             type='password'
             placeholder='your password'
             required
-            autocomplete='off'
+            autoComplete='off'
           />
         </label>
         <span onClick={onClickDemo} className='btn'>

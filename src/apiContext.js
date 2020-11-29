@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
-export default React.createContext({
+export const useApiContext = () => useContext(ApiContext);
+const ApiContext = React.createContext({
   products: [],
   orders: [],
   user: null,
   setUser: () => {},
 });
+
+export default ApiContext;

@@ -6,7 +6,6 @@ import './homepage.css';
 const HomePage = () => {
   return (
     <>
-      {/* <Header /> */}
       <div className='banner'>
         <div id='overlay'></div>
         <div className='banner-info'>
@@ -18,7 +17,7 @@ const HomePage = () => {
             and <span>keep track</span> of them all
           </p>
           <Link to='/accounts/register'>Register</Link>
-          <Link to='/accounts/login'>login</Link>
+          <Link to='/accounts/login'>Login</Link>
         </div>
         <div className='banner-img'>
           <img src={img} alt='banner' />

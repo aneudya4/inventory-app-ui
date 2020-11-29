@@ -42,9 +42,20 @@ const DashboardNav = ({ match, history, showNav, handleClick }) => {
                 handleClick(!showNav);
               }}
               activeClassName='selected'
+              to={`${match.path}/add-products`}
+            >
+              Add Products
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              onClick={() => {
+                handleClick(!showNav);
+              }}
+              activeClassName='selected'
               to={`${match.path}/products`}
             >
-              Products
+              Products in stock
             </NavLink>
           </li>
 
@@ -70,17 +81,7 @@ const DashboardNav = ({ match, history, showNav, handleClick }) => {
               Order history
             </NavLink>
           </li>
-          <li>
-            <NavLink
-              onClick={() => {
-                handleClick(!showNav);
-              }}
-              activeClassName='selected'
-              to={`${match.path}/add-products`}
-            >
-              Add Products
-            </NavLink>
-          </li>
+
           <li>
             <button onClick={handleLogout} className='btn btn-auth'>
               Sign Out
