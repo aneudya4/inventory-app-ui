@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test on the <Dashboard/> Component renders Dashboard without crashing 1`] = `
+<Redirect
+  to="/accounts/login"
+/>
+`;

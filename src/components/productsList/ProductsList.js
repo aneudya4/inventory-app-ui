@@ -2,7 +2,7 @@ import React from 'react';
 import Product from '../product/Product';
 import './productList.css';
 
-const ProductsList = ({ products, updateProducts, addToCart }) => {
+const ProductsList = ({ products, deleteProduct, addToCart }) => {
   return (
     <div className='product-list'>
       <h3>Products</h3>
@@ -12,7 +12,7 @@ const ProductsList = ({ products, updateProducts, addToCart }) => {
             <Product
               key={product.id}
               product={product}
-              updateProducts={updateProducts}
+              deleteProduct={deleteProduct}
               addToCart={addToCart}
             />
           );

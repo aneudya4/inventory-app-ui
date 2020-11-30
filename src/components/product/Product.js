@@ -3,10 +3,9 @@ import config from '../config';
 import { Link, withRouter } from 'react-router-dom';
 import { formatter } from '../ultils/index';
 
-const Product = ({ product, updateProducts, history, addToCart }) => {
+const Product = ({ product, deleteProduct, addToCart }) => {
   const [input, setInput] = useState(1);
   const [error, setError] = useState(false);
-
   const onClickAdd = (product) => {
     if (input < 0 || product.stock_total < input) {
       setError(true);
@@ -19,8 +18,8 @@ const Product = ({ product, updateProducts, history, addToCart }) => {
     };
     addToCart(productForCart);
   };
-  const onClickEdit = (userId, productId) => {
-    fetch(`${config.API_ENDPOINT}/products/${userId}/${productId}`, {
+  const onClickDelete = (userId, product) => {
+    fetch(`${config.API_ENDPOINT}/products/${userId}/${product.id}`, {
       method: 'DELETE',
       headers: {
         'content-type': 'application/json',
@@ -28,12 +27,10 @@ const Product = ({ product, updateProducts, history, addToCart }) => {
       },
     })
       .then((res) => {
-        if (!res.ok) return res.json().then((e) => Promise.reject(e));
-        return res.json();
-      })
-      .then((products) => {
-        updateProducts(products);
-        history.push('/auth/dashboard/products');
+        if (!res.ok) {
+          return res.json().then((e) => Promise.reject(e));
+        }
+        deleteProduct(product);
       })
       .catch((error) => {
         console.error(error);
@@ -71,7 +68,7 @@ const Product = ({ product, updateProducts, history, addToCart }) => {
         Edit
       </Link>
       <button
-        onClick={() => onClickEdit(product.user_id, product.id)}
+        onClick={() => onClickDelete(product.user_id, product)}
         className='btn delete'
       >
         Delete

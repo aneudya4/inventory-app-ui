@@ -32,9 +32,9 @@ const AddProduct = ({ user, history, addNewProduct }) => {
         if (!res.ok) return res.json().then((e) => Promise.reject(e));
         return res.json();
       })
-      .then((product) => {
-        addNewProduct(product);
-        history.push('/auth/dashboard/products');
+      .then(async (product) => {
+        await addNewProduct(product);
+        await history.push('/auth/dashboard/products');
       })
       .catch((error) => {
         console.error({ error });

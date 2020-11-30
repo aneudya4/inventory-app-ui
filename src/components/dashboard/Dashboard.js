@@ -13,7 +13,7 @@ import apiContext from '../../apiContext';
 import config from '../config';
 import './dashboard.css';
 
-const Dashboard = ({ match, history, location }) => {
+const Dashboard = ({ match, history }) => {
   const { user } = useContext(apiContext);
   const [userDbData, setUserDbData] = useState(null);
   const [products, setProducts] = useState([]);
@@ -59,6 +59,13 @@ const Dashboard = ({ match, history, location }) => {
     );
     newProducts.push(updatedProduct);
     setProducts(newProducts);
+  };
+
+  const deleteProduct = (productId) => {
+    const filteredProducts = products.filter(
+      (product) => product.id !== productId.id
+    );
+    setProducts(filteredProducts);
   };
 
   useEffect(() => {
@@ -133,9 +140,11 @@ const Dashboard = ({ match, history, location }) => {
       }
     }
   }, [userDbData, history]);
+
   if (user === null) {
     return <Redirect to='/accounts/login' />;
   }
+
   return (
     <div className='dashboard'>
       <Notification message='added' showNotification={showNotification} />
@@ -157,7 +166,7 @@ const Dashboard = ({ match, history, location }) => {
           products.length > 0 ? (
             <ProductsList
               {...routerProps}
-              updateProducts={setProducts}
+              deleteProduct={deleteProduct}
               products={products}
               orders={orders}
               addToCart={handleAddToCart}

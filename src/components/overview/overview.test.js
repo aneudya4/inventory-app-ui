@@ -19,7 +19,7 @@ describe('Test on the <Overview/> Component', () => {
       {
         id: 1,
         user_id: 1,
-        client: 'RIta',
+        client: 'Rita',
         client_email: 'Rita@gmail.com',
         order_total: '2843',
         created_at: '2020-11-28T07:35:41.291Z',
