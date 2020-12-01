@@ -27,6 +27,10 @@ const PlaceOrder = ({
       user_id: user.id,
       products: cart,
     };
+    if (order.products.length <= 0) {
+      setOrderError('There are not products to order');
+      return;
+    }
     fetch(`${config.API_ENDPOINT}/orders/`, {
       method: 'POST',
       headers: {
