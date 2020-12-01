@@ -38,7 +38,7 @@ const Product = ({ product, deleteProduct, addToCart }) => {
   };
 
   return (
-    <li>
+    <li className={`${error ? 'no-stock' : null}`}>
       <span>
         Product Name: <strong>{product.product_name}</strong>
       </span>
@@ -58,11 +58,6 @@ const Product = ({ product, deleteProduct, addToCart }) => {
           max={product.stock_total}
           min={1}
         />
-        {error && (
-          <span className='validation-errors'>
-            {`Current stock is  ${product.stock_total}`}
-          </span>
-        )}
       </label>
       <Link className='btn' to={`/auth/dashboard/edit-product/${product.id}`}>
         Edit
@@ -76,6 +71,11 @@ const Product = ({ product, deleteProduct, addToCart }) => {
       <button onClick={() => onClickAdd(product)} className='btn add'>
         Add to order
       </button>
+      {error && (
+        <span className='validation-errors'>
+          {`Current stock is  ${product.stock_total}`}
+        </span>
+      )}
     </li>
   );
 };

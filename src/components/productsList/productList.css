@@ -24,6 +24,9 @@
   padding: 15px;
   border-radius: 5px;
 }
+.product-list ul li.no-stock {
+  border-color: tomato;
+}
 .product-list li span {
   font-size: 20px;
   display: block;
@@ -34,6 +37,10 @@
 .product-list li span strong {
   font-size: 15px;
   margin-left: 5px;
+}
+
+.product-list ul li span:last-of-type {
+  text-align: center;
 }
 
 .product-list li label {

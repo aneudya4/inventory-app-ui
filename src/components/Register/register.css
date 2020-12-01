@@ -1,5 +1,7 @@
 .validation-errors {
   color: tomato;
+  text-align: center;
+  /* position: relative; */
 }
 label span {
   color: tomato;
