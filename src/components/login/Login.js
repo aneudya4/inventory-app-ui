@@ -84,7 +84,7 @@ const Login = ({ history }) => {
 
         <button className='btn'>Log In</button>
         <span>
-          need an account ? <Link to='./register'>Register</Link>
+          Need an account ? <Link to='./register'>Register</Link>
         </span>
       </form>
     </div>

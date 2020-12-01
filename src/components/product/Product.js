@@ -72,9 +72,7 @@ const Product = ({ product, deleteProduct, addToCart }) => {
         Add to order
       </button>
       {error && (
-        <span className='validation-errors'>
-          {`Current stock is  ${product.stock_total}`}
-        </span>
+        <span className='validation-errors'>{`Item is out of stock`}</span>
       )}
     </li>
   );
