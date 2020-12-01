@@ -28,3 +28,15 @@ a:visited {
   background: #82c9c1;
   cursor: pointer;
 }
+
+.validation-errors {
+  color: tomato;
+  text-align: center;
+}
+label span {
+  color: tomato;
+}
+
+input {
+  outline: none;
+}
