@@ -28,7 +28,7 @@ form label:first-of-type {
 label {
   text-align: left;
   display: block;
-  font-size: 17px;
+  font-size: 15px;
   width: 100%;
   margin: 20px 0;
   padding: 5px;
@@ -36,6 +36,7 @@ label {
 
 input {
   margin-top: 5px;
+  font-size: 15px;
   width: 100%;
   display: block;
   border-top: 0;

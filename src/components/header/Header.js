@@ -14,7 +14,7 @@ const Header = (props) => {
             <Link to='/accounts/register'>Register</Link>
           </li>
           <li>
-            <Link to='/accounts/login'>Login</Link>
+            <Link to='/accounts/login'>Log In</Link>
           </li>
         </>
       );

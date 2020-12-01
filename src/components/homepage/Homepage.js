@@ -17,7 +17,7 @@ const HomePage = () => {
             and <span>keep track</span> of them all
           </p>
           <Link to='/accounts/register'>Register</Link>
-          <Link to='/accounts/login'>Login</Link>
+          <Link to='/accounts/login'>Log In</Link>
         </div>
         <div className='banner-img'>
           <img src={img} alt='banner' />

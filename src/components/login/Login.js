@@ -82,7 +82,7 @@ const Login = ({ history }) => {
           DEMO
         </span>
 
-        <button className='btn'>Login</button>
+        <button className='btn'>Log In</button>
         <span>
           need an account ? <Link to='./register'>Register</Link>
         </span>
