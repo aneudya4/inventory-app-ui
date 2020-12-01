@@ -48,6 +48,10 @@ Invy is a Inventory Mangagment app implemented with React, Node, Express and Pos
 
 - Invy app is implemented with React, Node, Express,Firebase for authentication and postgresSQL
 
+### Mobile responsive:
+
+<p align="center"><img  src="./readme_assets/mobile.gif" width="70%"></p>
+
 ### Overview:
 
 User will see a Sumarry of the activities
