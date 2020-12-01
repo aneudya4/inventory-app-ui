@@ -45,10 +45,10 @@ exports[`Test on the <Login/> Component renders App without crashing 1`] = `
     <button
       className="btn"
     >
-      Login
+      Log In
     </button>
     <span>
-      need an account ? 
+      Need an account ? 
       <Link
         to="./register"
       >

@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test on the <ProductsToOrder/> Component renders ProductsToOrder without crashing 1`] = `
+<div
+  className="orders order-details "
+>
+  <span
+    className="btn delete"
+    onClick={[Function]}
+  >
+    <i
+      class="fas fa-trash"
+    />
+     
+  </span>
+  <span>
+    Iphone 12 Pro
+  </span>
+  <span>
+    $799.99
+  </span>
+  <span />
+  <span>
+    $NaN
+  </span>
+</div>
+`;

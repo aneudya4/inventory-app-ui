@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test on the <ProductList/> Component renders ProductList without crashing 1`] = `
+<div
+  className="product-list"
+>
+  <h3>
+    Products
+  </h3>
+  <ul>
+    <withRouter(Product)
+      key="1"
+      product={
+        Object {
+          "description": "64GB",
+          "id": 1,
+          "product_name": "Iphone 12 Pro",
+          "provider": "Apple",
+          "stock_total": 18,
+          "unit_price": "799.99",
+          "user_id": 1,
+        }
+      }
+    />
+  </ul>
+</div>
+`;

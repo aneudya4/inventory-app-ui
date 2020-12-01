@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test on the <AddProduct/> Component renders AddProduct without crashing 1`] = `
+<div
+  className="add-product"
+>
+  <h3>
+     Add New Product
+  </h3>
+  <form
+    onSubmit={[Function]}
+  >
+    <ProductForms />
+  </form>
+</div>
+`;
