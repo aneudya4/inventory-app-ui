@@ -1,5 +1,4 @@
 .product-list {
-  text-transform: capitalize;
   max-width: 1200px;
 }
 
@@ -26,6 +25,7 @@
 }
 .product-list ul li.no-stock {
   border-color: tomato;
+  text-align: center;
 }
 .product-list li span {
   font-size: 20px;
@@ -39,7 +39,7 @@
   margin-left: 5px;
 }
 
-.product-list ul li span:last-of-type {
+.product-list ul li span.validation-errors {
   text-align: center;
 }
 
