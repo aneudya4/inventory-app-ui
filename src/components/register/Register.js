@@ -25,7 +25,6 @@ const Register = ({ history }) => {
           .auth()
           .createUserWithEmailAndPassword(email.value, password.value)
           .then(function (result) {
-            console.log('hjere papi');
             return result.user.updateProfile({
               displayName: name.value,
             });
