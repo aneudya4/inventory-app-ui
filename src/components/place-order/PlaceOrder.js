@@ -55,7 +55,7 @@ const PlaceOrder = ({
     <div className='place-order'>
       <form id='place-order-form' onSubmit={onSubmit}>
         <label>
-          Client name:
+          Client's name:
           <input
             type='text'
             name='client_name'
@@ -64,11 +64,11 @@ const PlaceOrder = ({
           />
         </label>
         <label>
-          Client Email:
+          Client' Email:
           <input
             type='email'
             name='client_email'
-            placeholder='clients name'
+            placeholder='name@email.com'
             required
           />
         </label>

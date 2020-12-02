@@ -88,7 +88,7 @@ const Register = ({ history }) => {
           />
         </label>
         <label htmlFor='password'>
-          Your Passwords<span>*</span>
+          Your Password<span>*</span>
           <input
             id='password'
             name='password'

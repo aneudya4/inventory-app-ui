@@ -50,7 +50,7 @@ const Product = ({ product, deleteProduct, addToCart }) => {
         Description:<strong>{product.description}</strong>
       </span>
       <label>
-        quantity
+        Qty
         <input
           onChange={(e) => setInput(e.target.value)}
           type='number'
