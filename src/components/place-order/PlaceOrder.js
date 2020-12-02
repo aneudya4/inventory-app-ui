@@ -59,16 +59,16 @@ const PlaceOrder = ({
           <input
             type='text'
             name='client_name'
-            placeholder='clients name'
+            placeholder='Jane Doe'
             required
           />
         </label>
         <label>
-          Client' Email:
+          Client's Email:
           <input
             type='email'
             name='client_email'
-            placeholder='name@email.com'
+            placeholder='janeDoe@email.com'
             required
           />
         </label>
