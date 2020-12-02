@@ -84,7 +84,7 @@ const DashboardNav = ({ match, history, showNav, handleClick }) => {
 
           <li>
             <button onClick={handleLogout} className='btn btn-auth'>
-              Sign Out
+              Log Out
             </button>
           </li>
         </ul>

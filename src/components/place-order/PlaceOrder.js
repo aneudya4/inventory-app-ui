@@ -55,7 +55,7 @@ const PlaceOrder = ({
     <div className='place-order'>
       <form id='place-order-form' onSubmit={onSubmit}>
         <label>
-          Client's name:
+          Client's Name:
           <input
             type='text'
             name='client_name'

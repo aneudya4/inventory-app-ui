@@ -26,7 +26,7 @@ const Header = (props) => {
         </li>
         <li>
           <Link onClick={() => app.auth().signOut()} to='/'>
-            Logout
+            Log Out
           </Link>
         </li>
       </>
