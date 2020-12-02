@@ -15,7 +15,7 @@
 
 <img src="./readme_assets/homepage.png" width="100%">
 
-<h2 align="center"><a  href="#">Live Demo</a></h2>
+<h2 align="center"><a  href="https://inventory-app-ui.vercel.app/">Live Demo</a></h2>
 
 ### [Contributions are Welcome](https://github.com/aneudya4/inventory-app-ui.git)
 
