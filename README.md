@@ -23,7 +23,7 @@
 
 <p align="center">
 <img src="./readme_assets/overview.png" width="80%"></p>
-Invy is a Inventory Mangagment app implemented with React, Node, Express and PostgresSQL. It will help the user to keep track of products in stock and sales.
+Invy is a Inventory Managment app implemented with React, Node, Express and PostgresSQL. It will help the user to keep track of products in stock and sales.
 
 ## How Register
 
