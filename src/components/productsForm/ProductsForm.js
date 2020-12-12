@@ -23,12 +23,13 @@ const ProductForms = ({ userId, history, addNewProduct, product }) => {
       <label>
         Price:
         <input
-          type='text'
+          type='number'
           name='product_price'
           placeholder='699.99'
           required
           onChange={product ? (e) => setPrice(e.target.value) : null}
           value={product ? price : product}
+          min={1}
         />
       </label>
       <label>
